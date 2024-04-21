@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import * as helpers from "../../functions.js";
 import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
 
 // tile that shows unit information
-function UnitPaymentForm({ getPaymentSubmitted }) {
+function UnitPaymentForm({ getPaymentSubmitted, deposit }) {
   const createPayment = async (token, amount) => {
     const requestOptions = {
       method: "POST",
@@ -15,7 +16,7 @@ function UnitPaymentForm({ getPaymentSubmitted }) {
       }),
     };
 
-    fetch(`http://127.0.0.1:5000/payment`, requestOptions)
+    fetch(`${helpers.url}/payment`, requestOptions)
       .then((response) => response)
       .then((result) => {
         console.log(result);
@@ -30,7 +31,7 @@ function UnitPaymentForm({ getPaymentSubmitted }) {
     <PaymentForm
       applicationId="sandbox-sq0idb-VJRw3fsbLnl9pieyHixr2Q"
       cardTokenizeResponseReceived={(token, verifiedBuyer) => {
-        createPayment(token, "100");
+        createPayment(token, deposit);
       }}
       locationId="LTA3P3HJBFK8A"
     >

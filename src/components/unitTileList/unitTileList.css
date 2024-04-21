@@ -1,0 +1,35 @@
+@import "../../App.css";
+
+.selectable-units {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.units-date {
+    background-color: var(--main-bg-color-green);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+}
+
+.unit-tile-container {
+    width: 150px;
+    max-height: 400px;
+    margin: 10px;
+
+    img {
+        max-width: 100%;
+        max-height: auto ;
+      }
+}
+
+.unit-tile-container {
+    outline: 5px solid var(--main-bg-color-green);
+}
