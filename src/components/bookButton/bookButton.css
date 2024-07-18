@@ -1,0 +1,17 @@
+.book-btn {
+  color: var(--dark-blue) !important;
+  background-color: white !important;
+  background-image: none;
+  border-color: var(--dark-blue);
+  display: inline-flex; /* Ensures children are inline-flex */
+  align-items: center; /* Vertically center items */
+}
+
+.book-btn span {
+  padding-right: 0.5rem;
+}
+
+.book-btn:hover {
+  color: var(--dark-blue);
+  filter: brightness(80%);
+}

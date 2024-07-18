@@ -1,76 +1,55 @@
 // Home.js
 
 import React, { useEffect, useState } from "react";
-
-import BookingCalendar from "../components/bookingCalendar";
-import UnitTile from "../components/unitTile";
-
 import "./Home.css";
-import RenterInfoForm from "../components/renterInfoForm";
-import UnitPaymentForm from "../components/unitPaymentForm";
-import UnitTileList from "../components/unitTileList";
+import HomeCarousel from "../components/carousel/carousel";
+import LineItem from "../components/lineItem/lineItem";
+import BookingCalendar from "../components/bookingCalendar/bookingCalendar";
 
 function Home() {
-  const [selectedDates, setSelectedDates] = useState([]);
-  const [selectedUnits, setSelectedUnits] = useState({}); // {"<date>": "<unit_id"}
-  const [renterInfo, setRenterInfo] = useState(null);
-  const [paymentSubmitted, setPaymentSubmitted] = useState(false);
+  const slides = [
+    {
+      src: "./torch1.jpeg",
+      alt: "First slide",
+    },
+    {
+      src: "./torch3.jpeg",
+      alt: "Second slide",
+    },
+    {
+      src: "./torch2.jpeg",
+      alt: "Third slide",
+    },
+  ];
 
-  // useEffect(() => {
-  // }, [selectedDates])
+  return (
+    <>
+      <HomeCarousel
+        slides={slides}
+        title={"BoatTorch, LLC"}
+        description={"Make Lasting Memories With Us!"}
+        buttonTitle={"Book Your Adventure Today!"}
+        buttonUrl={process.env.REACT_APP_BOOKING_URL}
+      />
+      <LineItem
+        title={"Off Season Pricing Starting at $300/Day!"}
+        description="Enjoy early and late season rates starting at just $300 per day. Click here to book now and view daily pricing and availability."
+        photo={"/toon1.jpeg"}
+        buttonTitle={"Book Online Now"}
+        buttonUrl={process.env.REACT_APP_BOOKING_URL}
+      />
+      <LineItem
+        title={"Our Story"}
+        description={
+          "Hi, I'm Nils, and welcome to my pontoon rental business on the beautiful Torch Lake! Boating is my passion, and I'm excited to share it with you. As a small, locally-owned business, I am dedicated to providing you with exceptional, personalized experiences on the water. Whether you're looking to relax, explore, or enjoy a fun day out with family and friends, I'm here to ensure your time on Torch Lake is unforgettable. Come join us and create lasting memories!"
+        }
+        photo={"/nils.jpeg"}
+        right={true}
+      />
 
-  const getSelectedDates = (dates) => {
-    setSelectedDates(Array.from(dates).sort());
-  };
-
-  const getFormSubmitted = (info) => {
-    if (info) {
-      setRenterInfo(info);
-    }
-  };
-
-  const getPaymentSubmitted = (submitted) => {
-    if (submitted) {
-      setPaymentSubmitted(true);
-    }
-  };
-
-  // update selectedUnits
-  const onUnitSelection = (e, date) => {
-    setSelectedUnits({
-      ...selectedUnits, // copy old fields
-      date: e.target.value,
-    });
-  };
-
-  if (!paymentSubmitted) {
-    return (
-      <>
-        <BookingCalendar getSelectedDates={getSelectedDates} />
-
-        <div className="selected-dates">
-          {selectedDates.map((date) => (
-            <div className="selected-dates-date">
-              <p>{date}</p>
-              <UnitTileList date={date} />
-            </div>
-          ))}
-        </div>
-
-        {!renterInfo ? (
-          <RenterInfoForm getFormSubmitted={getFormSubmitted} />
-        ) : (
-          <UnitPaymentForm getPaymentSubmitted={getPaymentSubmitted} />
-        )}
-      </>
-    );
-  } else {
-    return (
-      <>
-        <p>SUCCESS PAGE</p>
-      </>
-    );
-  }
+      {/* <BookingCalendar /> */}
+    </>
+  );
 }
 
 export default Home;
