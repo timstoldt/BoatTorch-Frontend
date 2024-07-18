@@ -1,8 +1,9 @@
 FROM node:18-alpine as build
 WORKDIR /usr/app
 COPY . /usr/app
-RUN npm ci
-RUN npm run build
+RUN yarn install
+COPY . .
+RUN yarn build
 
 FROM nginx
 EXPOSE 81
