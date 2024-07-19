@@ -1,6 +1,7 @@
 .carousel-item {
   max-height: 70vh;
   position: relative;
+  min-height: 20vh;
 }
 
 .overlay {

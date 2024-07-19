@@ -3,8 +3,13 @@
 import React from "react";
 import LineItem from "../components/lineItem/lineItem";
 import HomeCarousel from "../components/carousel/carousel";
+import { useEffect } from "react";
 
 const Fleet = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const slides = [
     { src: "./toon.jpg", alt: "First slide" },
     { src: "./toonseats.jpg", alt: "Second slide" },

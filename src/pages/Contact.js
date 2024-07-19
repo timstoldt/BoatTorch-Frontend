@@ -13,8 +13,13 @@ import Header from "../components/header/header";
 import HomeCarousel from "../components/carousel/carousel";
 import * as helpers from "../utils";
 import { BsGeoAlt, BsGeoAltFill } from "react-icons/bs";
+import { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const slides = [
     {
       src: "./torch1.jpeg",

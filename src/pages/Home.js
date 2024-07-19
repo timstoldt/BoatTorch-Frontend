@@ -4,9 +4,12 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 import HomeCarousel from "../components/carousel/carousel";
 import LineItem from "../components/lineItem/lineItem";
-import BookingCalendar from "../components/bookingCalendar/bookingCalendar";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const slides = [
     {
       src: "./torch1.jpeg",

@@ -6,8 +6,13 @@ import LineItem from "../components/lineItem/lineItem";
 import * as helpers from "../utils";
 import "./Policy.css";
 import HomeCarousel from "../components/carousel/carousel";
+import { useEffect } from "react";
 
 const Policy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const FAQs = [
     {
       title: "How do I reserve a pontoon?",
