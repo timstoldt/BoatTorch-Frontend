@@ -42,7 +42,6 @@ BoatTorch is a comprehensive platform that simplifies the booking process for re
   ```
 
 3. **Install dependencies:**
-
   ```bash
   Copy code
   npm install
@@ -56,12 +55,12 @@ BoatTorch is a comprehensive platform that simplifies the booking process for re
   ```
 
 
-##Usage
+## Usage
 - Open your browser and navigate to http://localhost:3000 to view the application.
 - Sign up or log in to your account.
 - Browse available pontoons, select your preferred dates, and make a booking.
 
-##Contact
+## Contact
 - For any inquiries or issues, feel free to reach out:
 
 Tim Stoldt
