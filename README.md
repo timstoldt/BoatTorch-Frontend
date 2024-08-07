@@ -20,10 +20,8 @@ BoatTorch is a comprehensive platform that simplifies the booking process for re
 ## Features
 
 - **Responsive Design**: Ensures a seamless experience across various devices.
-- **User Authentication**: Secure login and registration for customers.
-- **Booking Management**: Easily view and manage pontoon reservations.
-- **Real-time Availability**: Check pontoon availability in real-time.
-- **Integrated Payment Gateway**: Secure and convenient payment options.
+- **Mobile Friendly**: Designed as a mobile-first application.
+- **Modular Design**: Devloper-friendly modular design for easy maintenance and updates.
 
 ## Technologies Used
 
