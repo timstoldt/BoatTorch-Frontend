@@ -37,22 +37,22 @@ BoatTorch is a comprehensive platform that simplifies the booking process for re
    ```
 
 2. **Navigate to the project directory:**
-  ```bash
-  cd BoatTorch-Frontend
-  ```
+   ```bash
+   cd BoatTorch-Frontend
+   ```
 
 3. **Install dependencies:**
-  ```bash
-  Copy code
-  npm install
-  ```
+   ```bash
+   Copy code
+   npm install
+   ```
 
 4. **Run the development server:**
-  ```
-  bash
-  Copy code
-  npm start
-  ```
+   ```
+   bash
+   Copy code
+   npm start
+   ```
 
 
 ## Usage
