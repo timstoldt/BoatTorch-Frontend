@@ -59,9 +59,6 @@ BoatTorch is a comprehensive platform that simplifies the booking process for re
 - Browse available pontoons, select your preferred dates, and make a booking.
 
 ## Contact
-- For any inquiries or issues, feel free to reach out:
-
-Tim Stoldt
-GitHub
-Email
+- For any inquiries or issues, feel free to reach out: https://tim.stoldt.us
+  
 Thank you for using BoatTorch! Happy boating!
