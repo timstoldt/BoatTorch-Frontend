@@ -43,14 +43,12 @@ BoatTorch is a comprehensive platform that simplifies the booking process for re
 
 3. **Install dependencies:**
    ```bash
-   Copy code
    npm install
    ```
 
 4. **Run the development server:**
    ```
    bash
-   Copy code
    npm start
    ```
 
