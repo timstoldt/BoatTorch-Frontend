@@ -1,6 +1,8 @@
 .item-container {
   display: flex;
   flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .item-container.right {

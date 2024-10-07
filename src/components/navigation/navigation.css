@@ -4,6 +4,13 @@
   top: 0;
 }
 
+.nav-banner {
+  padding: 1em;
+  text-align: center;
+  background-color: #00b3b3;
+  font-weight: bold;
+}
+
 .nav-bar {
   height: 100px;
   display: flex;
