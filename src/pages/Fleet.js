@@ -11,25 +11,34 @@ const Fleet = () => {
   }, []);
 
   const slides = [
-    { src: "./toon.jpg", alt: "First slide" },
+    { src: "./blackberry_interior.jpeg", alt: "first slide" },
     { src: "./toonseats.jpg", alt: "Second slide" },
   ];
 
   return (
     <>
-      <HomeCarousel
+      {/* <HomeCarousel
         slides={slides}
         title={"Our Fleet"}
         description={"Make Lasting Memories With Us!"}
         buttonTitle={"Book Your Adventure Today!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
-      />
+      /> */}
       <LineItem
         title={"26ft Tahoe Tritoon"}
         description={
           "Perfect for larger groups or families looking for a fun day on the water. This tritoon comfortably seats up to 15 passengers and offers a stable and smooth ride, ideal for both relaxation and adventure. Powered by a 175hp Yamaha VMAX outboard engine, it delivers plenty of power for cruising. The boat also includes a Bimini top for shade at the stern. With a 35 gallon fuel capacity, you'll have everything you need for an unforgettable day on the lake.</a>"
         }
         photo={"/bertha.jpeg"}
+        buttonTitle={"Book Online Now!"}
+        buttonUrl={process.env.REACT_APP_BOOKING_URL}
+      />
+      <LineItem
+        title={"24ft Avalon Tritoon"}
+        description={
+          "Perfect for an unforgettable day on the water, this spacious tritoon seats up to 12 passengers comfortably. Equipped with a Bimini top for shade at the stern, it offers the perfect blend of relaxation and adventure. The quiet yet powerful 140hp Suzuki 4-Stroke EFI outboard engine ensures a smooth and effortless ride, making it easy to explore the lake in style and comfort."
+        }
+        photo={"/blackberry_trailer.jpg"}
         buttonTitle={"Book Online Now!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
       />

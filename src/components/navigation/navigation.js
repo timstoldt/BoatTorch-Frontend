@@ -16,7 +16,7 @@ const Navigation = () => {
 
         {/* To be used for important notifications */}
         <div className="nav-banner">
-          We are closed for the season, bookings for summer of 2025 will open up in January of 2025. See you next year!
+          We are closed for the season, bookings for summer of 2025 will open up in February of 2025. See you next year!
         </div>
 
         <nav className="nav-bar">

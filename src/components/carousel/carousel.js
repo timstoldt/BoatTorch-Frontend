@@ -34,7 +34,7 @@ function HomeCarousel({ slides, title, description, buttonTitle, buttonUrl }) {
             key={index}
             className={`carousel-item ${index === activeIndex ? "active" : ""}`}
           >
-            <img className="d-block w-100" src={slide.src} alt={slide.alt} />
+            <img className="carousel-img d-block" src={slide.src} alt={slide.alt} />
           </div>
         ))}
       </div>
