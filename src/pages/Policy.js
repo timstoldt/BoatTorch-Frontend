@@ -65,8 +65,8 @@ const Policy = () => {
       buttonUrl: `/contact`,
     },{
       title: "View Full Terms and Conditions",
-      body: `You can view our full terms and conditions <a href='/terms_and_conditions.pdf' target='_blank' 
-              rel='noopener noreferrer'>here</a>.`,
+      body: `You can view our full terms and conditions <a href="/terms.pdf" target="_blank" 
+              rel="noopener noreferrer">here</a>.`,
     },
   ];
 
