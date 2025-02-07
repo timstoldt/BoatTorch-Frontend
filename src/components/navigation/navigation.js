@@ -40,7 +40,11 @@ const Navigation = () => {
             <Link className="nav-btn nav-item" to="/policy">
               FAQs
             </Link>
-            <a className="nav-btn nav-item" href="/contract.pdf">
+            <a 
+              className="nav-btn nav-item" 
+              href="/contract.pdf" 
+              target="_blank"
+              rel="noopener noreferrer">
               Contract
             </a>
           </div>
@@ -87,6 +91,8 @@ const Navigation = () => {
             <a
               className="nav-btn menu-item"
               href="/contract.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
             >
               Contract
