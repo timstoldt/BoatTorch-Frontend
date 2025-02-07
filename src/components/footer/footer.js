@@ -18,7 +18,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='row'>
-            <a href="/contract" className="text-white me-2 col">Contract</a>
+            <a href="/contract.pdf" target="_blank" referrerPolicy="noreferrer noopener" className="text-white me-2 col">Contract</a>
             <a href="/policy" className="text-white me-2 col">Policy</a>
             <a href="/contact" className="text-white col" >Contact Us</a>
         </div>

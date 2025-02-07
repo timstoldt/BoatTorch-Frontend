@@ -63,6 +63,10 @@ const Policy = () => {
       body: `You can reach Boat Torch, LLC at <a href='tel:${process.env.REACT_APP_PHONE}'>${helpers.formatPhoneNumber(process.env.REACT_APP_PHONE)}</a> or <a href='mailto:${process.env.REACT_APP_EMAIL}'>${process.env.REACT_APP_EMAIL}</a>`,
       buttonTitle: "Contact Us!",
       buttonUrl: `/contact`,
+    },{
+      title: "View Full Terms and Conditions",
+      body: `You can view our full terms and conditions <a href='/terms_and_conditions.pdf' target='_blank' 
+              rel='noopener noreferrer'>here</a>.`,
     },
   ];
 

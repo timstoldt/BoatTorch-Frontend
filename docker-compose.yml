@@ -1,0 +1,21 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: boattorch-frontend
+    restart: unless-stopped
+    ports:
+      - "81:81"
+    depends_on:
+      - nginx
+
+  nginx:
+    image: nginx:latest
+    container_name: boattorch-nginx
+    restart: unless-stopped
+    ports:
+      - "81:81"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./build:/usr/share/nginx/html
