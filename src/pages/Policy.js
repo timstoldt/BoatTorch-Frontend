@@ -22,11 +22,11 @@ const Policy = () => {
     },
     {
       title: "What is your cancellation policy?",
-      body: "Our cancellation policy for weather is that the boat goes out as long as it can safely do so. It will not go out at times where there are thunderstorms, strong winds, or heavy rain. If there is bad weather for part of the day, we will pro-rate your rent and give you a refund for the time you couldn't be out on the water safely. If severe weather occurs and forces a full day cancellation, you would receive a full refund or the option to reschedule for a different day if available. Weather can be unpredictable in northern Michigan, so the determination will be made by BoatTorch LLC staff either the evening before or the morning of the rental. In addition, our general cancellation policy allows you to cancel up to 14 days prior to your rental for a full refund. If you cancel after that, we will do our best to find a new renter. If we are able to do so, you will receive a full refund and if not, we will keep only the deposit amount.",
+      body: "Our cancellation policy for weather is that a boat goes out as long as it can safely do so. It will not go out at times where there are thunderstorms, strong winds, or heavy rain. If there is bad weather for part of the day, we will pro-rate your rent and give you a refund for the time you couldn't be out on the water safely. If severe weather occurs and forces a full day cancellation, you would receive a full refund or the option to reschedule for a different day if available. Weather can be unpredictable in northern Michigan, so the determination will be made by BoatTorch LLC staff either the evening before or the morning of the rental. In addition, our general cancellation policy allows you to cancel up to 14 days prior to your rental for a full refund. If you cancel after that, we will do our best to find a new renter. If we are able to do so, you will receive a full refund and if not, we will keep only the deposit amount.",
     },
     {
-      title: "How much does it cost to reserve the boat?",
-      body: `To officially reserve the boat we require a deposit that is payable via credit card or cash. The remainder will be paid when you pick up the boat. If you would like to proceed and reserve your spot, please click <a href='${process.env.REACT_APP_BOOKING_URL}'>here</a> to book now and see daily pricing.`,
+      title: "How much does it cost to reserve a boat?",
+      body: `To officially reserve a boat we require a deposit that is payable via credit card or cash. The remainder will be paid when you pick up the boat. If you would like to proceed and reserve your spot, please click <a href='${process.env.REACT_APP_BOOKING_URL}'>here</a> to book now and see daily pricing.`,
       buttonTitle: "Book Now!",
       buttonUrl: `${process.env.REACT_APP_BOOKING_URL}`,
     },
@@ -38,7 +38,7 @@ const Policy = () => {
     },
     {
       title: "What are the boat specifications?",
-      body: "We have a small fleet of boats available, to read more about them please visit our 'Fleet' page.",
+      body: "We have a small fleet of boats available, to read more about them please visit 'Our Fleet' page.",
       buttonTitle: "Our Fleet",
       buttonUrl: `/fleet`,
     },
