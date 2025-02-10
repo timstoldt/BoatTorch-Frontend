@@ -15,9 +15,9 @@ const Navigation = () => {
       <div className="nav-container">
 
         {/* To be used for important notifications */}
-        <div className="nav-banner">
+        {/* <div className="nav-banner">
           We are closed for the season, bookings for summer of 2025 will open up in February of 2025. See you this summer!
-        </div>
+        </div> */}
 
         <nav className="nav-bar">
           <a href="/" className="nav-btn nav-image">
