@@ -43,10 +43,10 @@ const Policy = () => {
       buttonUrl: `/fleet`,
     },
     {
-      title: "Where is the pick-up location?",
-      body: "The boat can be picked up at 6132 Crystal Beach Rd. NW, Rapid City, MI 49676.",
-      buttonTitle: "Directions",
-      buttonUrl: "https://maps.app.goo.gl/pwSS7a3TfxqpPTuF7",
+      "title": "Where is the pick-up location?",
+      "body": "The boat is in the water and ready for boarding at 6132 Crystal Beach Rd. NW, Rapid City, MI 49676.",
+      "buttonTitle": "Directions",
+      "buttonUrl": "https://maps.app.goo.gl/pwSS7a3TfxqpPTuF7"
     },
     {
       title: "Is parking available?",
