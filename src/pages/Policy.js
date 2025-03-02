@@ -1,7 +1,6 @@
 // Policy.js
 
 import React from "react";
-import AccordionSmall from "../components/accordion/accordion";
 import LineItem from "../components/lineItem/lineItem";
 import * as helpers from "../utils";
 import "./Policy.css";
