@@ -18,6 +18,9 @@ const Navigation = () => {
         {/* <div className="nav-banner">
           We are closed for the season, bookings for summer of 2025 will open up in February of 2025. See you this summer!
         </div> */}
+        <div className="nav-banner">
+          Get Your 7th Day FREE! Book 7 days, and only pay for 6!
+        </div>
 
         <nav className="nav-bar">
           <a href="/" className="nav-btn nav-image">
