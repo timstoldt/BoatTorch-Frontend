@@ -1,8 +1,10 @@
 .policy-container {
   display: flex;
   justify-content: space-around;
+  align-content: center;
+  margin: 20px;
 }
 
 .accordion {
-  max-width: 500px;
+  width: 100%;
 }

@@ -6,6 +6,7 @@ import * as helpers from "../utils";
 import "./Policy.css";
 import HomeCarousel from "../components/carousel/carousel";
 import { useEffect } from "react";
+import AccordionSmall from "../components/accordion/accordion";
 
 const Policy = () => {
   useEffect(() => {
@@ -43,13 +44,13 @@ const Policy = () => {
     },
     {
       "title": "Where is the pick-up location?",
-      "body": "The boat is in the water and ready for boarding at 6132 Crystal Beach Rd. NW, Rapid City, MI 49676.",
+      "body": "We keep our boats in the water and ready for boarding at 6132 Crystal Beach Rd. NW, Rapid City, MI 49676.",
       "buttonTitle": "Directions",
       "buttonUrl": "https://maps.app.goo.gl/pwSS7a3TfxqpPTuF7"
     },
     {
       title: "Is parking available?",
-      body: "Parking is located across the street from the pick-up location. There is a private drive sign, underneath which it says BoatTorch Parking. There is room for up to 4 cars.",
+      body: "Parking is located across the street from the pick-up location. There is a private drive sign, underneath which it says BoatTorch Parking. There is room for up to 3 cars per vessel.",
     },
     {
       title: "What are the pick-up and drop-off times?",
@@ -61,7 +62,7 @@ const Policy = () => {
     },
     {
       title: "How can I contact you?",
-      body: `You can reach Boat Torch, LLC at <a href='tel:${process.env.REACT_APP_PHONE}'>${helpers.formatPhoneNumber(process.env.REACT_APP_PHONE)}</a> or <a href='mailto:${process.env.REACT_APP_EMAIL}'>${process.env.REACT_APP_EMAIL}</a>`,
+      body: `You can reach us at <a href='tel:${process.env.REACT_APP_PHONE}'>${helpers.formatPhoneNumber(process.env.REACT_APP_PHONE)}</a> or <a href='mailto:${process.env.REACT_APP_EMAIL}'>${process.env.REACT_APP_EMAIL}</a>`,
       buttonTitle: "Contact Us!",
       buttonUrl: `/contact`,
     },{
@@ -75,15 +76,15 @@ const Policy = () => {
 
   const slides = [
     {
-      src: "./torch1.jpeg",
+      src: "./topView.JPG",
       alt: "First slide",
     },
     {
-      src: "./torch3.jpeg",
+      src: "./sandbarColors.JPG",
       alt: "Second slide",
     },
     {
-      src: "./torch2.jpeg",
+      src: "./sideView.JPG",
       alt: "Third slide",
     },
   ];
@@ -97,14 +98,17 @@ const Policy = () => {
         buttonTitle={"Book Your Adventure Today!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
       />
-      {FAQs.map((item) => (
+      {/* {FAQs.map((item) => (
         <LineItem
           title={item.title}
           description={item.body}
           buttonTitle={item.buttonTitle}
           buttonUrl={item.buttonUrl}
         />
-      ))}
+      ))} */}
+      <div className="policy-container">
+        <AccordionSmall content={FAQs} />
+      </div>
     </>
   );
 };

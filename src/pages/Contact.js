@@ -22,15 +22,15 @@ const Contact = () => {
 
   const slides = [
     {
-      src: "./torch1.jpeg",
+      src: "./topView.JPG",
       alt: "First slide",
     },
     {
-      src: "./torch3.jpeg",
+      src: "./sandbarColors.JPG",
       alt: "Second slide",
     },
     {
-      src: "./torch2.jpeg",
+      src: "./sideView.JPG",
       alt: "Third slide",
     },
   ];

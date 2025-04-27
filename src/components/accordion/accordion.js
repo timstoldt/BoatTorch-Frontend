@@ -3,6 +3,7 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import "./accordion.css";
+import LineItem from "../lineItem/lineItem";
 
 const AccordionSmall = ( {content}) => {
   return (
@@ -11,7 +12,13 @@ const AccordionSmall = ( {content}) => {
             <Accordion.Item eventKey={idx}>
                 <Accordion.Header>{item.title}</Accordion.Header>
                 <Accordion.Body>
-                    {item.body}
+                    <LineItem
+                        title={item.title}
+                        description={item.body}
+                        buttonTitle={item.buttonTitle}
+                        buttonUrl={item.buttonUrl}
+                        photo={item.photo}
+                    />
                 </Accordion.Body>
             </Accordion.Item>
         ))}

@@ -12,15 +12,15 @@ function Home() {
 
   const slides = [
     {
-      src: "./torch1.jpeg",
+      src: "./topView.JPG",
       alt: "First slide",
     },
     {
-      src: "./torch3.jpeg",
+      src: "./sandbarColors.JPG",
       alt: "Second slide",
     },
     {
-      src: "./torch2.jpeg",
+      src: "./sideView.JPG",
       alt: "Third slide",
     },
   ];
@@ -37,7 +37,7 @@ function Home() {
       <LineItem
         title={"Off Season Pricing Starting at $300/Day!"}
         description="Enjoy early and late season rates starting at just $300 per day. Click here to book now and view daily pricing and availability."
-        photo={"/toon1.jpeg"}
+        photo={"/sandbarLounge.JPG"}
         buttonTitle={"Book Online Now"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
       />
