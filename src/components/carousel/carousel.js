@@ -46,10 +46,10 @@ function HomeCarousel({ slides, title, description, buttonTitle, buttonUrl }) {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="sr-only">Next</span>
       </div>
-      {title && description && (
+      {title && (
         <div className="overlay">
           <h>{title}</h>
-          <p>{description}</p>
+          {description && <p>{description}</p>}
 
           {buttonTitle && buttonUrl && (
             <a className="btn btn-primary" href={buttonUrl}>

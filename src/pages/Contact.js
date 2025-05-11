@@ -40,9 +40,9 @@ const Contact = () => {
       <HomeCarousel
         slides={slides}
         title={"Contact Us"}
-        description={"Make Lasting Memories With Us!"}
-        buttonTitle={"Book Your Adventure Today!"}
-        buttonUrl={process.env.REACT_APP_BOOKING_URL}
+        // description={"Make Lasting Memories With Us!"}
+        // buttonTitle={"Book Your Adventure Today!"}
+        // buttonUrl={process.env.REACT_APP_BOOKING_URL}
       />
       <div className="contact-container">
         <div className="contact-btns">

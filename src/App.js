@@ -10,6 +10,7 @@ import Footer from "./components/footer/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Fleet from "./pages/Fleet";
 import Policy from "./pages/Policy";
+import Contract from "./pages/Contract";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/fleet" element={<Fleet />} />
           <Route path="/policy" element={<Policy />} />
+          <Route path="/contract" element={<Contract />} />
         </Route>
       </Routes>
       <Footer />

@@ -14,11 +14,10 @@ const AccordionSmall = ( {content}) => {
                 <Accordion.Body>
                     <LineItem
                         title={item.title}
-                        description={item.body}
                         buttonTitle={item.buttonTitle}
                         buttonUrl={item.buttonUrl}
                         photo={item.photo}
-                    />
+                    >{item.body}</LineItem>
                 </Accordion.Body>
             </Accordion.Item>
         ))}

@@ -26,7 +26,7 @@ const Policy = () => {
     },
     {
       title: "How much does it cost to reserve a boat?",
-      body: `To officially reserve a boat we require a deposit that is payable via credit card or cash. The remainder will be paid when you pick up the boat. If you would like to proceed and reserve your spot, please click <a href='${process.env.REACT_APP_BOOKING_URL}'>here</a> to book now and see daily pricing.`,
+      body: `To officially reserve a boat we require a deposit that is payable via credit card or cash. The remainder will be paid when you pick up the boat. Our booking calendar always has the most up-to-date pricing`,
       buttonTitle: "Book Now!",
       buttonUrl: `${process.env.REACT_APP_BOOKING_URL}`,
     },
@@ -34,7 +34,7 @@ const Policy = () => {
       title: "Where can I find the rental contract?",
       body: "Please find our rental contract here. If you booked online we will have it printed out for you with the information you provided. Otherwise, we prefer that you return it to us via email before the day of your rental. You may also fill it out, print, and bring it with you if that works better for you.",
       buttonTitle: "Rental Contract",
-      buttonUrl: `/contract.pdf`,
+      buttonUrl: `/contract`,
     },
     {
       title: "What are the boat specifications?",
@@ -61,14 +61,21 @@ const Policy = () => {
       body: "You will receive the boat with a full tank of gas. We will charge you for the amount of gas you use at the current gas dock rate. You do not have to fill up the tank yourself. Most customers use between 2 and 15 gallons throughout the day, depending on the speed and distance covered.",
     },
     {
+      title: "Do you allow pets?",
+      body: "Yes! We allow pets on board for a $30 pet fee. We just ask that pets are well-behaved, stay off the seats and cushions, and that owners take full responsibility for any damages. We want everyone — two-legged and four-legged, to have a great time on the water!"
+    },
+    {
+      title: "Do you allow tubing?",
+      body: "Yes! We allow tubing for a $50 fee, and we provide the tube and rope. This fee covers both the equipment and permission to tube behind our boats. For safety and insurance reasons, we do not allow guests to bring their own tubes.",
+    },
+    {
       title: "How can I contact you?",
-      body: `You can reach us at <a href='tel:${process.env.REACT_APP_PHONE}'>${helpers.formatPhoneNumber(process.env.REACT_APP_PHONE)}</a> or <a href='mailto:${process.env.REACT_APP_EMAIL}'>${process.env.REACT_APP_EMAIL}</a>`,
+      body: `You can call us at ${helpers.formatPhoneNumber(process.env.REACT_APP_PHONE)} or email us at ${process.env.REACT_APP_EMAIL}`,
       buttonTitle: "Contact Us!",
       buttonUrl: `/contact`,
     },{
       title: "View Full Terms and Conditions",
-      body: `You can view our full terms and conditions <a href="/terms.pdf" target="_blank" 
-              rel="noopener noreferrer">here</a>.`,
+      body: `You can view our full terms and conditions below.`,
       buttonTitle: "Terms and Conditions",
       buttonUrl: `/terms.pdf`,
     },
@@ -94,9 +101,9 @@ const Policy = () => {
       <HomeCarousel
         slides={slides}
         title={"FAQs"}
-        description={"Make Lasting Memories With Us!"}
-        buttonTitle={"Book Your Adventure Today!"}
-        buttonUrl={process.env.REACT_APP_BOOKING_URL}
+        // description={"Make Lasting Memories With Us!"}
+        // buttonTitle={"Book Your Adventure Today!"}
+        // buttonUrl={process.env.REACT_APP_BOOKING_URL}
       />
       {/* {FAQs.map((item) => (
         <LineItem

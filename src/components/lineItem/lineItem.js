@@ -3,7 +3,7 @@
 import React from "react";
 import "./lineItem.css";
 
-const LineItem = ({ title, description, photo, buttonTitle, buttonUrl, right }) => {
+const LineItem = ({ title, photo, buttonTitle, buttonUrl, right, children }) => {
   return (
     <div className={"item-container d-flex align-items-center p-3" + (right ? " right" : "")}>
         {photo && (<div className="item-photo me-3">
@@ -12,7 +12,7 @@ const LineItem = ({ title, description, photo, buttonTitle, buttonUrl, right }) 
         <div className="item-description">
             <div className="item-description-center">
                 <h3>{title}</h3>
-                <p dangerouslySetInnerHTML={{ __html: description }} />
+                <div className="child-container">{children}</div> 
                 {(buttonTitle && buttonUrl) && <a className="btn btn-outline-primary" href={buttonUrl}>{buttonTitle}</a>}
             </div>
         </div>

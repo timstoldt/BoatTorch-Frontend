@@ -18,9 +18,9 @@ const Navigation = () => {
         {/* <div className="nav-banner">
           We are closed for the season, bookings for summer of 2025 will open up in February of 2025. See you this summer!
         </div> */}
-        <div className="nav-banner">
+        {/* <div className="nav-banner">
           Get Your 7th Day FREE! Book 7 days, and only pay for 6!
-        </div>
+        </div> */}
 
         <nav className="nav-bar">
           <a href="/" className="nav-btn nav-image">
@@ -43,13 +43,9 @@ const Navigation = () => {
             <Link className="nav-btn nav-item" to="/policy">
               FAQs
             </Link>
-            <a 
-              className="nav-btn nav-item" 
-              href="/contract.pdf" 
-              target="_blank"
-              rel="noopener noreferrer">
+            <Link className="nav-btn nav-item" to="/contract">
               Contract
-            </a>
+            </Link>
           </div>
           <div className="nav-button">
             <BookButton />
@@ -91,7 +87,7 @@ const Navigation = () => {
             >
               FAQs
             </Link>
-            <a
+            {/* <a
               className="nav-btn menu-item"
               href="/contract.pdf"
               target="_blank"
@@ -99,7 +95,14 @@ const Navigation = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Contract
-            </a>
+            </a> */}
+            <Link
+              className="nav-btn menu-item"
+              to="/contract"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contract
+            </Link>
           </div>
         )}
       </div>

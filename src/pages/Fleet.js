@@ -4,53 +4,81 @@ import React from "react";
 import LineItem from "../components/lineItem/lineItem";
 import HomeCarousel from "../components/carousel/carousel";
 import { useEffect } from "react";
+import "./Fleet.css";
 
 const Fleet = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const slides = [
-    { src: "./blackberry_interior.jpeg", alt: "first slide" },
-    { src: "./toonseats.jpg", alt: "Second slide" },
+ const slides = [
+    {
+      src: "./topView.JPG",
+      alt: "First slide",
+    },
+    {
+      src: "./sandbarColors.JPG",
+      alt: "Second slide",
+    },
+    {
+      src: "./sideView.JPG",
+      alt: "Third slide",
+    },
   ];
 
   return (
     <>
-      {/* <HomeCarousel
+      <HomeCarousel
         slides={slides}
         title={"Our Fleet"}
-        description={"Make Lasting Memories With Us!"}
-        buttonTitle={"Book Your Adventure Today!"}
-        buttonUrl={process.env.REACT_APP_BOOKING_URL}
-      /> */}
+      />
+      <div className="fleet-container">
       <LineItem
         title={"26ft Tahoe Tritoon"}
-        description={
-          "Perfect for larger groups or families looking for a fun day on the water. This tritoon comfortably seats up to 15 passengers and offers a stable and smooth ride, ideal for both relaxation and adventure. Powered by a 175hp Yamaha VMAX outboard engine, it delivers plenty of power for cruising. The boat also includes a Bimini top for shade at the stern. With a 35 gallon fuel capacity, you'll have everything you need for an unforgettable day on the lake.</a>"
-        }
         photo={"/blueTahoe26.JPG"}
-        buttonTitle={"Book Online Now!"}
+        buttonTitle={"Check Availability!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
-      />
+      >
+      <ul>
+        <li>Capacity: 15 passengers</li>
+        <li>175hp Yamaha VMAX outboard engine</li>
+        <li>Bimini top</li>
+        <li>35-gallon fuel capacity</li>
+        <li>Ideal for larger groups</li>
+        <li>Starts at $400/Day</li>
+      </ul>
+      </LineItem>
       <LineItem
-        title={"24ft Avalon Tritoon"}
+        title={"23ft Avalon Tritoon"}
         description={
           "Perfect for an unforgettable day on the water, this spacious tritoon seats up to 12 passengers comfortably. Equipped with a Bimini top for shade at the stern, it offers the perfect blend of relaxation and adventure. The quiet yet powerful 140hp Suzuki 4-Stroke EFI outboard engine ensures a smooth and effortless ride, making it easy to explore the lake in style and comfort."
         }
         photo={"/blackAva24.JPG"}
-        buttonTitle={"Book Online Now!"}
+        buttonTitle={"Check Availability!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
-      />
+      ><ul>
+        <li>Capacity: 12 passengers</li>
+        <li>140hp Suzuki outboard engine</li>
+        <li>Bimini top</li>
+        <li>38-gallon fuel capacity</li>
+        <li>Starts at $350/Day</li>
+      </ul>
+      </LineItem>
       <LineItem
         title={"24ft Avalon Pontoon"}
-        description={
-          "Perfect for a relaxing day on the water. This pontoon comfortably seats up to 13 passengers (up to 1850 lbs) and comes equipped with a Bimini top to provide shade at the stern. Enjoy the convenience of a 5-inch Garmin Chartplotter/Fishfinder, making navigation and fishing easier. Powered by a quiet and efficient 90hp 2023 Yamaha 4-Stroke EFI outboard engine, this pontoon also includes a 25-gallon fuel tank, ensuring you have plenty of fuel for your adventures.</a>"
-        }
         photo={"/blueAva24.JPG"}
-        buttonTitle={"Book Online Now!"}
+        buttonTitle={"Check Availability!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
-      />
+      ><ul>
+        <li>Capacity: 13 passengers</li>
+        <li>90hp Yamaha outboard engine</li>
+        <li>Bimini top</li>
+        <li>25-gallon fuel capacity</li>
+        <li>JL Audio Stereo</li>
+        <li>Starts at $300/Day</li>
+      </ul>
+      </LineItem>
+      </div>
     </>
   );
 };
