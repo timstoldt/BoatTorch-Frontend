@@ -44,7 +44,7 @@ function Home() {
       >
         <ul>
           <li>No Hidden Fees or Taxes</li>
-          <li>Rescue Boat on Standby</li>
+          <li>Safety Boat on Standby</li>
           <li>Private Dock on Torch Lake Sandbar</li>
           <li>Pricing starts at $300/Day</li>
           <li>7th Day Free for weekly rentals</li>
