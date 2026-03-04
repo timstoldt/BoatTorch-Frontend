@@ -45,7 +45,6 @@ const Fleet = () => {
         <li>Bimini top</li>
         <li>35-gallon fuel capacity</li>
         <li>Ideal for larger groups</li>
-        <li>Starts at $450/Day</li>
       </ul>
       </LineItem>
       <LineItem
@@ -61,7 +60,6 @@ const Fleet = () => {
         <li>140hp Suzuki outboard engine</li>
         <li>Bimini top</li>
         <li>38-gallon fuel capacity</li>
-        <li>Starts at $400/Day</li>
       </ul>
       </LineItem>
       <LineItem
@@ -75,7 +73,6 @@ const Fleet = () => {
         <li>Bimini top</li>
         <li>25-gallon fuel capacity</li>
         <li>JL Audio Stereo</li>
-        <li>Starts at $300/Day</li>
       </ul>
       </LineItem>
       </div>

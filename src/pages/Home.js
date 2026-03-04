@@ -58,7 +58,7 @@ function Home() {
         buttonTitle={"Book Online Now"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
       /> */}
-      <LineItem
+      {/* <LineItem
         title={"Our Story"}
         photo={"/nils.jpeg"}
         right={true}
@@ -67,7 +67,7 @@ function Home() {
       and I'm excited to share it with you. As a small, locally-owned business, I am dedicated to providing you with 
       exceptional, personalized experiences on the water. Whether you're looking to relax, explore, or enjoy a fun 
       day out with family and friends, I'm here to ensure your time on Torch Lake is unforgettable. Come join us and create lasting memories!
-      </LineItem>
+      </LineItem> */}
       </div>
 
       {/* <BookingCalendar /> */}
