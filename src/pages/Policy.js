@@ -37,16 +37,22 @@ const Policy = () => {
       buttonUrl: `/contract`,
     },
     {
+      title: "Do I need a license to operate a rental boat?",
+      body: "Michigan state law requires that anyone born on or after July 1, 1996 must have a valid boating safety certificate to operate a motorized vessel. We encourage all of our renters to take the online Michigan Boaters Safety Course.",
+      buttonTitle: "Online Boaters Safety Course",
+      buttonUrl: "https://www.boat-ed.com/michigan/",
+    },
+    {
       title: "What are the boat specifications?",
       body: "We have a small fleet of boats available, to read more about them please visit 'Our Fleet' page.",
       buttonTitle: "Our Fleet",
       buttonUrl: `/fleet`,
     },
     {
-      "title": "Where is the pick-up location?",
-      "body": "We keep our boats in the water and ready for boarding at 6132 Crystal Beach Rd. NW, Rapid City, MI 49676.",
-      "buttonTitle": "Directions",
-      "buttonUrl": "https://maps.app.goo.gl/pwSS7a3TfxqpPTuF7"
+      title: "Where is the pick-up location?",
+      body: "We keep our boats in the water and ready for boarding at 6132 Crystal Beach Rd. NW, Rapid City, MI 49676.",
+      buttonTitle: "Directions",
+      buttonUrl: "https://maps.app.goo.gl/pwSS7a3TfxqpPTuF7"
     },
     {
       title: "Is parking available?",
