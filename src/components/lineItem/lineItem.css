@@ -1,73 +1,107 @@
 .item-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+  align-items: stretch;
   max-width: 1200px;
-  margin: 10px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 28px auto;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
 }
 
-.item-container.right {
-  .item-description {
-    order: 1;
-  }
+.item-container.right .item-description {
+  order: 1;
+}
 
-  .item-photo {
-    order: 2;
-  }
+.item-container.right .item-photo {
+  order: 2;
 }
 
 .item-photo {
   order: 1;
-  flex-grow: 1;
-  min-width: 49%; /* Adjust the width as needed */
-  min-height: 150px;
+  min-height: 330px;
+  background: var(--surface-soft);
 }
 
 .item-photo img {
-  border-radius: 0.25rem;
-  width: 100%; /* Ensure image is responsive */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  object-fit: cover;
 }
 
 .item-description {
   order: 2;
-  flex-grow: 1;
-  padding: 1rem;
-  min-width: 51%;
+  display: flex;
+  align-items: center;
+  padding: 2.25rem;
 }
 
 .item-description h3 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.85rem;
+  color: var(--ink);
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: 0;
 }
 
 .item-description p {
   margin-bottom: 1rem;
+  color: var(--muted);
 }
 
-ul {
+.child-container ul {
   text-align: left;
+  padding-left: 1.2rem;
+  margin-bottom: 1.25rem;
+  color: var(--ink);
+}
+
+.child-container li {
+  margin-bottom: 0.45rem;
 }
 
 .child-container {
-  margin-bottom: 10px;
+  margin-bottom: 0.25rem;
+}
+
+.item-description .btn {
+  padding: 0.7rem 1rem;
 }
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .item-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
+    margin: 22px auto;
   }
 
   .item-photo {
-    max-width: 100%;
     order: 1 !important;
+    min-height: 235px;
+  }
+
+  .item-photo img {
+    min-height: 235px;
   }
 
   .item-description {
     order: 2 !important;
-    padding-left: 0;
-    padding-top: 1rem;
+    padding: 1.5rem;
+  }
+
+  .item-description h3 {
+    font-size: 1.5rem;
+  }
+
+  .child-container ul {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

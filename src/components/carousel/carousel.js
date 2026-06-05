@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./carousel.css";
-import BookButton from "../bookButton/bookButton";
 
 function HomeCarousel({ slides, title, description, buttonTitle, buttonUrl }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,21 +33,25 @@ function HomeCarousel({ slides, title, description, buttonTitle, buttonUrl }) {
             key={index}
             className={`carousel-item ${index === activeIndex ? "active" : ""}`}
           >
-            <img className="carousel-img d-block" src={slide.src} alt={slide.alt} />
+            <img
+              className="carousel-img d-block"
+              src={slide.src}
+              alt={slide.alt}
+            />
           </div>
         ))}
       </div>
       <div className="carousel-control-prev" role="button" onClick={handlePrev}>
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="sr-only">Previous</span>
+        <span className="visually-hidden">Previous</span>
       </div>
       <div className="carousel-control-next" role="button" onClick={handleNext}>
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="sr-only">Next</span>
+        <span className="visually-hidden">Next</span>
       </div>
       {title && (
         <div className="overlay">
-          <h>{title}</h>
+          <h1>{title}</h1>
           {description && <p>{description}</p>}
 
           {buttonTitle && buttonUrl && (

@@ -1,17 +1,29 @@
 .book-btn {
   color: var(--dark-blue) !important;
-  background-color: white !important;
+  background-color: #ffffff !important;
   background-image: none;
-  border-color: var(--dark-blue);
-  display: inline-flex; /* Ensures children are inline-flex */
-  align-items: center; /* Vertically center items */
+  border-color: transparent !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0.35rem;
+  padding: 0.65rem 0.95rem !important;
+  box-shadow: 0 8px 18px rgba(9, 48, 58, 0.18);
+  line-height: 1.1 !important;
 }
 
 .book-btn span {
-  padding-right: 0.5rem;
+  padding-right: 0;
+  white-space: nowrap;
 }
 
 .book-btn:hover {
-  color: var(--dark-blue);
-  filter: brightness(80%);
+  color: var(--dark-blue) !important;
+  filter: brightness(96%);
+  transform: translateY(-1px);
+}
+
+.book-btn svg {
+  flex: 0 0 auto;
 }
