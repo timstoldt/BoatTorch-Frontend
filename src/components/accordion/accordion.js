@@ -3,25 +3,24 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import "./accordion.css";
-import LineItem from "../lineItem/lineItem";
 
-const AccordionSmall = ( {content}) => {
+const AccordionSmall = ({ content }) => {
   return (
-      <Accordion className={"accordion-main"} defaultActiveKey="0">
-        {content.map((item, idx) => (
-            <Accordion.Item eventKey={idx}>
-                <Accordion.Header>{item.title}</Accordion.Header>
-                <Accordion.Body>
-                    <LineItem
-                        title={item.title}
-                        buttonTitle={item.buttonTitle}
-                        buttonUrl={item.buttonUrl}
-                        photo={item.photo}
-                    >{item.body}</LineItem>
-                </Accordion.Body>
-            </Accordion.Item>
-        ))}
-      </Accordion>
+    <Accordion className={"accordion-main"} defaultActiveKey="0">
+      {content.map((item, idx) => (
+        <Accordion.Item eventKey={String(idx)} key={item.title}>
+          <Accordion.Header>{item.title}</Accordion.Header>
+          <Accordion.Body>
+            <p>{item.body}</p>
+            {item.buttonTitle && item.buttonUrl && (
+              <a className="btn btn-outline-primary" href={item.buttonUrl}>
+                {item.buttonTitle}
+              </a>
+            )}
+          </Accordion.Body>
+        </Accordion.Item>
+      ))}
+    </Accordion>
   );
 };
 

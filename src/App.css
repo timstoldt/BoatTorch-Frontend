@@ -1,16 +1,53 @@
-@import "https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css";
-
 :root {
-  --main-bg-color-green: #aaebe8;
-  --blocked-bg-color-gray: #cccbcb;
-  --booked-bg-color-red: #f9c9c1;
-  --past-bg-color-gray: #c4c2c2;
+  --main-bg-color-green: #a9ded8;
+  --blocked-bg-color-gray: #d1d5db;
+  --booked-bg-color-red: #f2b8ad;
+  --past-bg-color-gray: #c9c9c9;
 
-  --light-blue: #5f9ea0;
-  --dark-blue: #1e90ff;
-  --blue-highlight: #58b1ff;
-  --yellow: #ffffb5;
-  --green: #6dc06d;
-  --light-green: #bde8cd;
-  --light-grey: #abaaaa;
+  --light-blue: #6fb8c0;
+  --dark-blue: #0f5f73;
+  --blue-highlight: #1b879b;
+  --yellow: #f6cf66;
+  --green: #4f9f7a;
+  --light-green: #d9efe7;
+  --light-grey: #8d99a6;
+  --ink: #18313a;
+  --muted: #60717a;
+  --page-bg: #f5faf9;
+  --surface: #ffffff;
+  --surface-soft: #eef7f5;
+  --border: #d8e6e3;
+  --shadow-soft: 0 18px 45px rgba(24, 49, 58, 0.12);
+  --shadow-light: 0 10px 24px rgba(24, 49, 58, 0.08);
+  --radius: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--ink);
+}
+
+.btn {
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+}
+
+.btn-primary,
+.btn-outline-primary:hover {
+  background-color: var(--blue-highlight) !important;
+  border-color: var(--blue-highlight) !important;
+}
+
+.btn-outline-primary {
+  color: var(--dark-blue) !important;
+  border-color: var(--blue-highlight) !important;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+  filter: brightness(94%);
 }

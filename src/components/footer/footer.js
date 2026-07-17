@@ -1,30 +1,34 @@
-import React from 'react';
-import './footer.css';
-import * as helpers from '../../utils.js'
+import React from "react";
+import "./footer.css";
+import * as helpers from "../../utils.js";
 
 const Footer = () => {
   return (
-    <footer className="footer text-white py-3">
+    <footer className="footer">
       <div className="container">
-        <div className='row'>
-            <a className='col' href={'tel:' + process.env.REACT_APP_PHONE}>{helpers.formatPhoneNumber(process.env.REACT_APP_PHONE)}</a>
+        <div className="footer-brand">
+          <strong>BoatTorch, LLC</strong>
+          <span>Torch Lake, MI</span>
         </div>
-        <div className='row'>
-            <a className='col' href={'mailto:' + process.env.REACT_APP_EMAIL}>boattorch@gmail.com</a>
+        <div className="footer-links">
+          <a href={"tel:" + process.env.REACT_APP_PHONE}>
+            {helpers.formatPhoneNumber(process.env.REACT_APP_PHONE)}
+          </a>
+          <a href={"mailto:" + process.env.REACT_APP_EMAIL}>
+            {process.env.REACT_APP_EMAIL}
+          </a>
+          <a href="/contract.pdf" target="_blank" rel="noreferrer">
+            Contract
+          </a>
+          <a href="/policy">Policy</a>
+          <a href="/contact">Contact Us</a>
         </div>
-        <div className="row">
-          <div className="col">
-            <p className="mb-0">&copy; 2024 Boattorch, LLC. All rights reserved.</p>
-          </div>
-        </div>
-        <div className='row'>
-            <a href="/contract.pdf" target="_blank" referrerPolicy="noreferrer noopener" className="text-white me-2 col">Contract</a>
-            <a href="/policy" className="text-white me-2 col">Policy</a>
-            <a href="/contact" className="text-white col" >Contact Us</a>
-        </div>
+        <p className="footer-copy">
+          &copy; {new Date().getFullYear()} BoatTorch, LLC. All rights reserved.
+        </p>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

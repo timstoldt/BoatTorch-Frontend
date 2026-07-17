@@ -1,6 +1,6 @@
 // Home.js
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import HomeCarousel from "../components/carousel/carousel";
 import LineItem from "../components/lineItem/lineItem";

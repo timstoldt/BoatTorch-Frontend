@@ -49,7 +49,7 @@ const Fleet = () => {
       </LineItem>
       <LineItem
         title={"27ft Avalon Tritoon"}
-        photo={"/blueAva27.jpg"}
+        photo={"/blueAva27.JPG"}
         buttonTitle={"Check Availability!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
       ><ul>
@@ -61,7 +61,6 @@ const Fleet = () => {
       </LineItem>
       <LineItem
         title={"23ft Avalon Tritoon"}
-
         photo={"/blackAva24.JPG"}
         buttonTitle={"Check Availability!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}

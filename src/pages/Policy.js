@@ -1,7 +1,6 @@
 // Policy.js
 
 import React from "react";
-import LineItem from "../components/lineItem/lineItem";
 import * as helpers from "../utils";
 import "./Policy.css";
 import HomeCarousel from "../components/carousel/carousel";
@@ -68,7 +67,7 @@ const Policy = () => {
     },
     {
       title: "Do you allow pets?",
-      body: "Yes! We allow pets on board for a $30 pet fee. We just ask that pets are well-behaved, stay off the seats and cushions, and that owners take full responsibility for any damages. We want everyone — two-legged and four-legged, to have a great time on the water!"
+      body: "Yes! We allow pets on board for a $30 pet fee. We just ask that pets are well-behaved, stay off the seats and cushions, and that owners take full responsibility for any damages. We want everyone, two-legged and four-legged, to have a great time on the water!"
     },
     {
       title: "Do you allow tubing?",
@@ -107,18 +106,7 @@ const Policy = () => {
       <HomeCarousel
         slides={slides}
         title={"FAQs"}
-        // description={"Make Lasting Memories With Us!"}
-        // buttonTitle={"Book Your Adventure Today!"}
-        // buttonUrl={process.env.REACT_APP_BOOKING_URL}
       />
-      {/* {FAQs.map((item) => (
-        <LineItem
-          title={item.title}
-          description={item.body}
-          buttonTitle={item.buttonTitle}
-          buttonUrl={item.buttonUrl}
-        />
-      ))} */}
       <div className="policy-container">
         <AccordionSmall content={FAQs} />
       </div>
