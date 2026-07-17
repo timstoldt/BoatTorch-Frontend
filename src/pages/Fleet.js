@@ -48,10 +48,20 @@ const Fleet = () => {
       </ul>
       </LineItem>
       <LineItem
+        title={"27ft Avalon Tritoon"}
+        photo={"/blueAva27.jpg"}
+        buttonTitle={"Check Availability!"}
+        buttonUrl={process.env.REACT_APP_BOOKING_URL}
+      ><ul>
+        <li>Capacity: 19 passengers</li>
+        <li>150hp Mercury outboard engine</li>
+        <li>Bimini top</li>
+        <li>45-gallon fuel capacity</li>
+      </ul>
+      </LineItem>
+      <LineItem
         title={"23ft Avalon Tritoon"}
-        description={
-          "Perfect for an unforgettable day on the water, this spacious tritoon seats up to 12 passengers comfortably. Equipped with a Bimini top for shade at the stern, it offers the perfect blend of relaxation and adventure. The quiet yet powerful 140hp Suzuki 4-Stroke EFI outboard engine ensures a smooth and effortless ride, making it easy to explore the lake in style and comfort."
-        }
+
         photo={"/blackAva24.JPG"}
         buttonTitle={"Check Availability!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
