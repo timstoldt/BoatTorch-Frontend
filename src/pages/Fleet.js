@@ -56,7 +56,7 @@ const Fleet = () => {
         <li>Capacity: 19 passengers</li>
         <li>150hp Mercury outboard engine</li>
         <li>Bimini top</li>
-        <li>45-gallon fuel capacity</li>
+        <li>58-gallon fuel capacity</li>
       </ul>
       </LineItem>
       <LineItem
