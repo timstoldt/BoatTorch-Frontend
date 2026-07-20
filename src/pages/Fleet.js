@@ -53,7 +53,7 @@ const Fleet = () => {
         buttonTitle={"Check Availability!"}
         buttonUrl={process.env.REACT_APP_BOOKING_URL}
       ><ul>
-        <li>Capacity: 19 passengers</li>
+        <li>Capacity: 17 passengers</li>
         <li>150hp Mercury outboard engine</li>
         <li>Bimini top</li>
         <li>58-gallon fuel capacity</li>
