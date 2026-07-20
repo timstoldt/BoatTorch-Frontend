@@ -71,19 +71,6 @@ const Fleet = () => {
         <li>38-gallon fuel capacity</li>
       </ul>
       </LineItem>
-      <LineItem
-        title={"24ft Avalon Pontoon"}
-        photo={"/blueAva24.JPG"}
-        buttonTitle={"Check Availability!"}
-        buttonUrl={process.env.REACT_APP_BOOKING_URL}
-      ><ul>
-        <li>Capacity: 13 passengers</li>
-        <li>90hp Yamaha outboard engine</li>
-        <li>Bimini top</li>
-        <li>25-gallon fuel capacity</li>
-        <li>JL Audio Stereo</li>
-      </ul>
-      </LineItem>
       </div>
     </>
   );
