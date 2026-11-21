@@ -26,7 +26,7 @@ const perks = [
   },
   {
     title: "Family owned and operated",
-    text: "You deal with us, not a call center.",
+    text: "Run by locals who love this lake.",
     icon: (
       <>
         <path d="M3 11l9-7 9 7" />
