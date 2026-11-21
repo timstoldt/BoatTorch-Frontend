@@ -175,6 +175,7 @@
 
 .sandbar-copy {
   flex: 1 1 440px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

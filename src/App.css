@@ -144,3 +144,10 @@ a {
     transform: none;
   }
 }
+
+/* Very narrow screens: keep long words like "Caribbean" inside the page. */
+@media (max-width: 359px) {
+  .display--xl {
+    font-size: 44px;
+  }
+}

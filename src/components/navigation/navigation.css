@@ -155,17 +155,12 @@
   }
 }
 
-/* Keep the Book now button on one line; drop the wordmark on narrow phones. */
+/* Keep the Book now button on one line. */
 .nav-right .pill {
   flex-shrink: 0;
   white-space: nowrap;
 }
 
-@media (max-width: 480px) {
-  .nav-brand span {
-    display: none;
-  }
-}
 
 .season-short {
   display: none;
@@ -190,9 +185,19 @@
     padding: 10px var(--gutter);
   }
 
+  .nav-brand {
+    gap: 8px;
+    min-width: 0;
+  }
+
   .nav-brand img {
     width: 40px;
     height: 40px;
+  }
+
+  .nav-brand span {
+    font-size: 16px;
+    letter-spacing: 0.02em;
   }
 
   .nav-right {
@@ -208,5 +213,12 @@
   .nav-menu-btn {
     width: 40px;
     height: 40px;
+  }
+}
+
+/* Very narrow screens (under 360px): logo only, so Book now still fits. */
+@media (max-width: 359px) {
+  .nav-brand span {
+    display: none;
   }
 }
