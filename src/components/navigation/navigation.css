@@ -16,6 +16,10 @@
   padding: 10px var(--gutter);
   background: var(--lake);
   color: #e6eef1;
+  /* Overlap the menu by 1px so a fractional banner height never shows a hairline gap. */
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1px;
   font-size: 14px;
   line-height: 1.4;
   text-align: center;
