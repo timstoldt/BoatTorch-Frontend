@@ -36,17 +36,32 @@ const Navigation = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Clear over the photo at the very top, solid once you start scrolling.
-  const [isScrolled, setIsScrolled] = useState(false);
+  // Clear over the photo at the very top, then fades to solid over the first
+  // FADE_DISTANCE pixels of scrolling. Written straight to a CSS variable so it
+  // tracks the scroll without re-rendering.
+  const FADE_DISTANCE = 160;
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 8);
-    onScroll();
+    const el = headerRef.current;
+    if (!el) return undefined;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const progress = Math.min(Math.max(window.scrollY / FADE_DISTANCE, 0), 1);
+      el.style.setProperty("--nav-solid", progress.toFixed(3));
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   const closeMenu = () => setIsMenuOpen(false);
-  const isSolid = isScrolled || isMenuOpen;
+  const isSolid = isMenuOpen;
 
   return (
     <>

@@ -32,17 +32,29 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  position: relative;
+  isolation: isolate;
   padding: 16px var(--gutter);
   /* A faint shade keeps links readable over bright water. */
   background: linear-gradient(180deg, rgba(10, 27, 36, 0.45) 0%, rgba(10, 27, 36, 0) 100%);
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.site-header.is-solid .nav-bar {
+/* The solid layer fades in with scroll (--nav-solid goes 0 to 1). */
+.nav-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(10, 27, 36, 0.94);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  opacity: var(--nav-solid, 0);
+  transition: opacity 0.2s linear;
+}
+
+.site-header.is-solid .nav-bar::before {
+  opacity: 1;
 }
 
 .nav-brand {
