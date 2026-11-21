@@ -11,4 +11,6 @@ export const SEASON_BANNER = {
   show: true,
   message:
     "Thank you for an amazing 2026 season! We look forward to seeing you again next year.",
+  // One-line version shown on phones.
+  shortMessage: "Thanks for a great 2026 season! See you next year.",
 };

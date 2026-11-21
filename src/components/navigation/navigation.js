@@ -24,37 +24,53 @@ const Navigation = () => {
     { label: "Contact", to: { pathname, hash: "#visit" } },
   ];
 
-  // Keep --nav-offset equal to the header height so sections land below it.
-  useEffect(() => {
-    const el = headerRef.current;
-    if (!el) return undefined;
-    const update = () =>
-      document.documentElement.style.setProperty("--nav-offset", `${el.offsetHeight}px`);
-    update();
-    const observer = new ResizeObserver(update);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  // Clear over the photo at the very top, then fades to solid over the first
-  // FADE_DISTANCE pixels of scrolling. Written straight to a CSS variable so it
-  // tracks the scroll without re-rendering.
+  // Header measurements, shared with CSS:
+  //   --header-h:   full header height (pages pad their photo header by this)
+  //   --nav-offset: what stays pinned once you scroll (sections land below it)
+  // On phones the season message scrolls away, so only the menu bar stays.
+  const bannerHeight = useRef(0);
+  const isPhone = useRef(false);
   const FADE_DISTANCE = 160;
+
   useEffect(() => {
     const el = headerRef.current;
     if (!el) return undefined;
+    const root = document.documentElement.style;
+    const phoneQuery = window.matchMedia("(max-width: 640px)");
     let frame = 0;
-    const update = () => {
+
+    // Clear over the photo at the very top, fading to solid over the first
+    // FADE_DISTANCE pixels. Written to CSS variables so nothing re-renders.
+    const onScrollFrame = () => {
       frame = 0;
-      const progress = Math.min(Math.max(window.scrollY / FADE_DISTANCE, 0), 1);
-      el.style.setProperty("--nav-solid", progress.toFixed(3));
+      const y = window.scrollY;
+      el.style.setProperty("--nav-solid", Math.min(Math.max(y / FADE_DISTANCE, 0), 1).toFixed(3));
+      const shift = isPhone.current ? Math.min(Math.max(y, 0), bannerHeight.current) : 0;
+      el.style.transform = shift ? `translateY(${-shift}px)` : "";
     };
+
+    const measure = () => {
+      const banner = el.querySelector(".season-banner");
+      isPhone.current = phoneQuery.matches;
+      bannerHeight.current = banner ? banner.offsetHeight : 0;
+      const full = el.offsetHeight;
+      root.setProperty("--header-h", `${full}px`);
+      root.setProperty("--nav-offset", `${isPhone.current ? full - bannerHeight.current : full}px`);
+      onScrollFrame();
+    };
+
     const onScroll = () => {
-      if (!frame) frame = window.requestAnimationFrame(update);
+      if (!frame) frame = window.requestAnimationFrame(onScrollFrame);
     };
-    update();
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    phoneQuery.addEventListener("change", measure);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
+      observer.disconnect();
+      phoneQuery.removeEventListener("change", measure);
       window.removeEventListener("scroll", onScroll);
       window.cancelAnimationFrame(frame);
     };
@@ -73,7 +89,8 @@ const Navigation = () => {
               <path d="M17 18a5 5 0 0 0-10 0" />
               <path d="M12 9V5M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1" />
             </svg>
-            <span>{SEASON_BANNER.message}</span>
+            <span className="season-long">{SEASON_BANNER.message}</span>
+            <span className="season-short">{SEASON_BANNER.shortMessage}</span>
           </div>
         )}
 

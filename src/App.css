@@ -16,8 +16,9 @@
   --font-display: "Archivo", "Inter", system-ui, sans-serif;
   --gutter: clamp(16px, 5vw, 72px);
   --content: 1296px;
-  /* Set at runtime by Navigation to the height of the sticky header. */
+  /* Set at runtime by Navigation: pinned header height and full header height. */
   --nav-offset: 84px;
+  --header-h: 84px;
 }
 
 html {

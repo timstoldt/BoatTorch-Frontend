@@ -166,3 +166,47 @@
     display: none;
   }
 }
+
+.season-short {
+  display: none;
+}
+
+/* Phones: one-line message that scrolls away, and a slimmer menu bar. */
+@media (max-width: 640px) {
+  .season-banner {
+    padding: 8px var(--gutter);
+    font-size: 13px;
+  }
+
+  .season-long {
+    display: none;
+  }
+
+  .season-short {
+    display: inline;
+  }
+
+  .nav-bar {
+    padding: 10px var(--gutter);
+  }
+
+  .nav-brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  .nav-right .pill {
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  .nav-menu-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

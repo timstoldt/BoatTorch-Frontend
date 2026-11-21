@@ -1,7 +1,7 @@
 .page-header {
   position: relative;
   overflow: hidden;
-  padding: calc(var(--nav-offset) + 96px) var(--gutter) 72px;
+  padding: calc(var(--header-h) + 96px) var(--gutter) 72px;
   background: var(--navy);
   color: #ffffff;
 }
