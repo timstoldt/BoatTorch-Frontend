@@ -1,38 +1,72 @@
-.accordion-main {
-  max-width: 1000px;
-  border-radius: var(--radius);
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
   overflow: hidden;
-  box-shadow: var(--shadow-light);
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(10, 27, 36, 0.06), 0 10px 24px rgba(10, 27, 36, 0.05);
 }
 
-.accordion-main .accordion-item {
-  border-color: var(--border);
+.faq-question {
+  margin: 0;
 }
 
-.accordion-main .accordion-button {
+.faq-question button {
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 24px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.3;
   color: var(--ink);
-  font-weight: 800;
-  letter-spacing: 0;
-  padding: 1.15rem 1.25rem;
 }
 
-.accordion-main .accordion-button:not(.collapsed) {
-  background: var(--surface-soft);
-  color: var(--dark-blue);
-  box-shadow: inset 0 -1px 0 var(--border);
+.faq-question button:hover {
+  background: #f7fafb;
 }
 
-.accordion-main .accordion-button:focus {
-  border-color: var(--blue-highlight);
-  box-shadow: 0 0 0 0.2rem rgba(27, 135, 155, 0.18);
+.faq-question button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
 }
 
-.accordion-main .accordion-body {
-  color: var(--muted);
-  line-height: 1.7;
-  padding: 1.25rem;
+.faq-sign {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #eaf1f3;
+  color: var(--teal);
+  font-size: 20px;
+  font-weight: 500;
 }
 
-.accordion-main .accordion-body p {
-  margin-bottom: 1rem;
+.faq-answer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 0 24px 24px;
+}
+
+.faq-answer p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #33474f;
 }

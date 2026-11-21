@@ -1,0 +1,5 @@
+.faq-container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 72px var(--gutter) 120px;
+}

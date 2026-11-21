@@ -1,23 +1,19 @@
-// Policy.js
+// Faq.js
 
 import React from "react";
 import * as helpers from "../utils";
-import "./Policy.css";
-import HomeCarousel from "../components/carousel/carousel";
-import { useEffect } from "react";
-import AccordionSmall from "../components/accordion/accordion";
+import "./Faq.css";
+import PageHeader from "../components/pageHeader/pageHeader";
+import Accordion from "../components/accordion/accordion";
+import { BOOKING_URL, PHONE, EMAIL } from "../config";
 
-const Policy = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+const Faq = () => {
   const FAQs = [
     {
       title: "How do I reserve a boat?",
       body: "You can reserve online here or give us a text or call!",
-      buttonTitle: "Book Now!",
-      buttonUrl: `${process.env.REACT_APP_BOOKING_URL}`,
+      buttonTitle: "Book now",
+      buttonUrl: BOOKING_URL,
     },
     {
       title: "What is your cancellation policy?",
@@ -26,8 +22,8 @@ const Policy = () => {
     {
       title: "How much does it cost to reserve a boat?",
       body: `To officially reserve a boat we require a deposit that is payable via credit card or cash. The remainder will be paid when you pick up the boat. Our booking calendar always has the most up-to-date pricing`,
-      buttonTitle: "Book Now!",
-      buttonUrl: `${process.env.REACT_APP_BOOKING_URL}`,
+      buttonTitle: "Book now",
+      buttonUrl: BOOKING_URL,
     },
     {
       title: "Where can I find the rental contract?",
@@ -43,9 +39,9 @@ const Policy = () => {
     },
     {
       title: "What are the boat specifications?",
-      body: "We have a small fleet of boats available, to read more about them please visit 'Our Fleet' page.",
+      body: "We have a small fleet of boats available. To read more about them, please visit the Fleet section.",
       buttonTitle: "Our Fleet",
-      buttonUrl: `/fleet`,
+      buttonUrl: "/#fleet",
     },
     {
       title: "Where is the pick-up location?",
@@ -59,7 +55,7 @@ const Policy = () => {
     },
     {
       title: "What are the pick-up and drop-off times?",
-      body: "This is an 8-hour rental that begins at 10:00 am and ends at 6:00 pm. Please communicate your plans to us in advance so that we can have the boat ready and a staff member available upon your arrival. The return time is strictly enforced, if you would like to stay out longer, please inquire about our evening rate. If you are interested in a multi-day rental, please contact us.",
+      body: "This is an 8-hour rental that begins at 10:00 am and ends at 6:00 pm. Please communicate your plans to us in advance so that we can have the boat ready and a staff member available upon your arrival. The return time is strictly enforced, if you would like to stay out longer, please inquire about our evening rate. If you are interested in a multi-day rental, please contact us. Delivery is available on multi-day rentals.",
     },
     {
       title: "How is gas pricing handled?",
@@ -75,9 +71,9 @@ const Policy = () => {
     },
     {
       title: "How can I contact you?",
-      body: `You can call us at ${helpers.formatPhoneNumber(process.env.REACT_APP_PHONE)} or email us at ${process.env.REACT_APP_EMAIL}`,
+      body: `You can call us at ${helpers.formatPhoneNumber(PHONE)} or email us at ${EMAIL}`,
       buttonTitle: "Contact Us!",
-      buttonUrl: `/contact`,
+      buttonUrl: "/contact",
     },{
       title: "View Full Terms and Conditions",
       body: `You can view our full terms and conditions below.`,
@@ -86,32 +82,14 @@ const Policy = () => {
     },
   ];
 
-  const slides = [
-    {
-      src: "./topView.JPG",
-      alt: "First slide",
-    },
-    {
-      src: "./sandbarColors.JPG",
-      alt: "Second slide",
-    },
-    {
-      src: "./sideView.JPG",
-      alt: "Third slide",
-    },
-  ];
-
   return (
     <>
-      <HomeCarousel
-        slides={slides}
-        title={"FAQs"}
-      />
-      <div className="policy-container">
-        <AccordionSmall content={FAQs} />
-      </div>
+      <PageHeader title="FAQs">Don't see your question? Give us a call or text.</PageHeader>
+      <main className="faq-container" id="faq">
+        <Accordion content={FAQs} />
+      </main>
     </>
   );
 };
 
-export default Policy;
+export default Faq;

@@ -1,0 +1,88 @@
+.boat-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.boat-card:hover {
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 1px 2px rgba(10, 27, 36, 0.06), 0 24px 48px rgba(10, 27, 36, 0.14);
+}
+
+.boat-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.boat-card-photo {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #d7e2e6;
+}
+
+.boat-card-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.boat-card:hover .boat-card-photo img {
+  transform: scale(1.04);
+}
+
+.boat-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 26px 26px;
+  flex-grow: 1;
+}
+
+.boat-card-body h3 {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.boat-card-capacity {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.boat-card-specs {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.boat-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boat-card,
+  .boat-card:hover,
+  .boat-card-photo img,
+  .boat-card:hover .boat-card-photo img {
+    transition: none;
+    transform: none;
+  }
+}

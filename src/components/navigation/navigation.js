@@ -1,111 +1,105 @@
-import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+// navigation.js
+// Sticky header: seasonal banner, logo, menu links and an always-visible
+// Book now button. Under 820px the links fold into a menu button.
+
+import React, { useEffect, useRef, useState } from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import "./navigation.css";
 import BookButton from "../bookButton/bookButton";
+import ScrollToHash from "../scrollToHash/scrollToHash";
+import { SEASON_BANNER } from "../../config";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const headerRef = useRef(null);
+  const { pathname } = useLocation();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const links = [
+    { label: "Fleet", to: "/#fleet" },
+    { label: "The Sandbar", to: "/#sandbar" },
+    { label: "Our Story", to: "/#story" },
+    { label: "FAQ", to: "/faq" },
+    // Contact scrolls to the footer on whichever page you're on.
+    { label: "Contact", to: { pathname, hash: "#visit" } },
+  ];
+
+  // Keep --nav-offset equal to the header height so sections land below it.
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return undefined;
+    const update = () =>
+      document.documentElement.style.setProperty("--nav-offset", `${el.offsetHeight}px`);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Clear over the photo at the very top, solid once you start scrolling.
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const closeMenu = () => setIsMenuOpen(false);
+  const isSolid = isScrolled || isMenuOpen;
 
   return (
     <>
-      <div className="nav-container">
+      <ScrollToHash />
+      <header className={`site-header${isSolid ? " is-solid" : ""}`} ref={headerRef}>
+        {SEASON_BANNER.show && (
+          <div className="season-banner" role="status">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M17 18a5 5 0 0 0-10 0" />
+              <path d="M12 9V5M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1" />
+            </svg>
+            <span>{SEASON_BANNER.message}</span>
+          </div>
+        )}
 
-        {/*To be used for important notifications*/}
-        <div className="nav-banner">
-          Thank you for an amazing 2026 season! We will look forward to seeing you again next year!
-        </div>
-        {/* <div className="nav-banner">
-          Get Your 7th Day FREE! Book 7 days, and only pay for 6!
-        </div> */}
+        <nav className="nav-bar" aria-label="Main">
+          <Link to="/" className="nav-brand" onClick={closeMenu}>
+            <img src="/img/logo-96.png" alt="" width="48" height="48" />
+            <span>BoatTorch</span>
+          </Link>
 
-        <nav className="nav-bar">
-          <a href="/" className="nav-btn nav-image">
-            <img height="80" src="./logo.png" alt="BoatTorch" />
-            <div className="company-name">
-              <h5>BoatTorch, LLC</h5>
-              <p>Torch Lake, MI</p>
+          <div className="nav-right">
+            <div className="nav-links">
+              {links.map((link) => (
+                <Link key={link.label} className="nav-link-item" to={link.to}>
+                  {link.label}
+                </Link>
+              ))}
             </div>
-          </a>
-          <div className={`nav-options`}>
-            <Link className="nav-btn nav-item" to="/">
-              Home
-            </Link>
-            <Link className="nav-btn nav-item" to="/contact">
-              Contact Us
-            </Link>
-            <Link className="nav-btn nav-item" to="/fleet">
-              Our Fleet
-            </Link>
-            <Link className="nav-btn nav-item" to="/policy">
-              FAQs
-            </Link>
-            <Link className="nav-btn nav-item" to="/contract">
-              Contract
-            </Link>
-          </div>
-          <div className="nav-button">
             <BookButton />
-          </div>
-          <div className="hamburger" onClick={toggleMenu}>
-            <span></span>
-            <span></span>
-            <span></span>
+            <button
+              type="button"
+              className="nav-menu-btn"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <RxCross2 size={20} /> : <RxHamburgerMenu size={20} />}
+            </button>
           </div>
         </nav>
 
         {isMenuOpen && (
-          <div className="menu-options">
-            <Link
-              className="nav-btn menu-item"
-              to="/"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              className="nav-btn menu-item"
-              to="/contact"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact Us
-            </Link>
-            <Link
-              className="nav-btn menu-item"
-              to="/fleet"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Our Fleet
-            </Link>
-            <Link
-              className="nav-btn menu-item"
-              to="/policy"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              FAQs
-            </Link>
-            {/* <a
-              className="nav-btn menu-item"
-              href="/contract.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contract
-            </a> */}
-            <Link
-              className="nav-btn menu-item"
-              to="/contract"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contract
-            </Link>
+          <div className="nav-mobile" id="mobile-menu">
+            {links.map((link) => (
+              <Link key={link.label} className="nav-link-item" to={link.to} onClick={closeMenu}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         )}
-      </div>
+      </header>
 
       <Outlet />
     </>

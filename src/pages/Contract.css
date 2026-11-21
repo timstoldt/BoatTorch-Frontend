@@ -1,19 +1,23 @@
 .contract-container {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 56px var(--gutter) 120px;
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  min-height: calc(100vh - 132px);
-  background: var(--page-bg);
-  padding: 20px;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contract-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .contract-container iframe {
-  flex: 1;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
   width: 100%;
-  min-height: 78vh;
-  overflow: hidden;
+  min-height: 80vh;
+  border: 0;
+  border-radius: var(--radius-card);
   background: #ffffff;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-card);
 }
