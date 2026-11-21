@@ -16,7 +16,6 @@
   padding: 10px var(--gutter);
   background: var(--lake);
   color: #e6eef1;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 14px;
   line-height: 1.4;
   text-align: center;
@@ -152,7 +151,13 @@
   }
 }
 
-@media (max-width: 400px) {
+/* Keep the Book now button on one line; drop the wordmark on narrow phones. */
+.nav-right .pill {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
   .nav-brand span {
     display: none;
   }
