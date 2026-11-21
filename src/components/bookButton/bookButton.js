@@ -1,12 +1,14 @@
-import React from "react";
-import "./bookButton.css";
-import { RxOpenInNewWindow } from "react-icons/rx";
+// bookButton.js
+// Links out to the external booking site.
 
-const BookButton = () => {
+import React from "react";
+import { BOOKING_URL } from "../../config";
+
+const BookButton = ({ children = "Book now", size, className = "" }) => {
+  const sizeClass = size === "lg" ? " pill--lg" : "";
   return (
-    <a className="btn book-btn" href={process.env.REACT_APP_BOOKING_URL}>
-      <span>Book Now!</span>
-      <RxOpenInNewWindow />
+    <a className={`pill pill--gold${sizeClass} ${className}`.trim()} href={BOOKING_URL}>
+      {children}
     </a>
   );
 };

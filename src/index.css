@@ -1,22 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   min-width: 320px;
-
-  font-family:
-    "Poppins",
-    "Segoe UI",
-    Arial,
-    sans-serif;
+  font-family: "Inter", system-ui, "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
 code {
-  font-family:
-    "SFMono-Regular",
-    Consolas,
-    "Liberation Mono",
-    monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }

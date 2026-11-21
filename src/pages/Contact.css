@@ -1,82 +1,55 @@
 .contact-container {
-  max-width: 1120px;
+  max-width: var(--content);
   margin: 0 auto;
-  padding: 46px 20px 64px;
-}
-
-.contact-btns {
+  padding: 72px var(--gutter) 120px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 24px;
 }
 
-.contact-btn {
-  align-self: center;
-  display: flex !important;
-  min-width: 60px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50% !important;
-  align-items: center;
-  justify-content: center;
-  background: var(--surface-soft) !important;
-  border-color: var(--border) !important;
-  color: var(--dark-blue) !important;
-  flex: 0 0 60px;
-}
-
-.contact-btn .icon {
-  width: 20px;
-  height: 20px;
-}
-
-.contact-btn:hover {
-  background: var(--blue-highlight) !important;
-  border-color: var(--blue-highlight) !important;
-  color: #ffffff !important;
-}
-
-.contact-name {
+.contact-card {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  margin-left: 1rem;
-  justify-content: center;
-  min-width: 0;
-}
-
-.contact-name * {
-  margin: 0;
-}
-
-.contact-name h2 {
-  color: var(--ink);
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
-.contact-name p {
-  color: var(--muted);
-  overflow-wrap: anywhere;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  min-height: 128px;
-  padding: 1.35rem;
+  gap: 8px;
+  padding: 28px;
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.15s ease;
 }
 
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-  .contact-btns {
-    grid-template-columns: 1fr;
-  }
+.contact-card:hover {
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--gold);
+  font-size: 18px;
+}
+
+.contact-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.contact-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
