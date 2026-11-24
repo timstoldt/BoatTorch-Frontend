@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import { RxChevronDown } from "react-icons/rx";
 import "./Home.css";
 import Photo from "../components/photo/photo";
 import BookButton from "../components/bookButton/bookButton";
@@ -74,31 +75,18 @@ function Home() {
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content">
           <div className="hero-copy">
-            <p className="eyebrow eyebrow--gold hero-eyebrow">Torch Lake · Northern Michigan</p>
-            <h1 className="display display--xl">
-              Torch Lake,
-              <br />
-              your way.
-            </h1>
-            <p className="hero-sub">Premium tritoon rentals on beautiful Torch Lake.</p>
-            <div className="hero-actions">
-              <BookButton size="lg">Book your day</BookButton>
-              <Link className="pill pill--outline pill--lg" to="/#fleet">
-                See the fleet
-              </Link>
-            </div>
-          </div>
-          <div className="hero-price">
-            <span className="hero-price-label">Starting at</span>
-            <span className="hero-price-value">
-              $300<span> / day</span>
-            </span>
+            <p className="hero-eyebrow">Rapid City, Michigan</p>
+            <h1 className="hero-title">Torch Lake, your way.</h1>
+            <BookButton size="lg">Book your boat</BookButton>
           </div>
         </div>
+        <Link className="hero-scroll" to="/#perks" aria-label="Scroll down">
+          <RxChevronDown aria-hidden="true" />
+        </Link>
       </section>
 
       {/* PERKS */}
-      <section className="perks" aria-label="Why BoatTorch">
+      <section className="perks" id="perks" aria-label="Why BoatTorch">
         <div className="container-wide perks-grid">
           {perks.map((perk) => (
             <div className="perk" key={perk.title}>
