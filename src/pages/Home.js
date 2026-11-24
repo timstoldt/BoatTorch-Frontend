@@ -59,11 +59,7 @@ function Home() {
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content">
           <div className="hero-copy">
-            <h1 className="display display--xl">
-              Torch Lake,
-              <br />
-              your way.
-            </h1>
+            <h1 className="hero-title">Torch Lake, your way.</h1>
             <p className="hero-sub">Premium tritoon rentals on beautiful Torch Lake, from $300 a day.</p>
             <div className="hero-actions">
               <BookButton size="lg">Book your day</BookButton>
@@ -161,7 +157,7 @@ function Home() {
         <Photo name="sunset" small className="cover-img" alt="" />
         <div className="book-shade" aria-hidden="true" />
         <div className="book-content">
-          <h2 className="display display--xl">Make lasting memories with us.</h2>
+          <h2 className="display display--lg">Make lasting memories with us.</h2>
           <p>
             Days start at $300. Delivery is available on multi-day rentals.
           </p>
