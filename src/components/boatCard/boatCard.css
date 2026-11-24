@@ -61,11 +61,6 @@
   color: var(--teal);
 }
 
-.boat-card-specs {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--muted);
-}
 
 .boat-card-cta {
   display: inline-flex;

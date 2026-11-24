@@ -41,12 +41,9 @@
   gap: 24px;
 }
 
-.hero-eyebrow {
-  font-size: 14px;
-}
 
 .hero-sub {
-  max-width: 560px;
+  max-width: 640px;
   font-size: 19px;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.88);
@@ -59,53 +56,27 @@
   padding-top: 8px;
 }
 
-.hero-price {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 20px 24px;
-  border-radius: 16px;
-  background: rgba(10, 27, 36, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
 
-.hero-price-label {
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
-}
 
-.hero-price-value {
-  font-family: var(--font-display);
-  font-stretch: 110%;
-  font-weight: 800;
-  font-size: 44px;
-  line-height: 1;
-}
 
-.hero-price-value span {
-  font-size: 18px;
-  font-weight: 600;
-}
 
 /* Perks */
 .perks {
   background: var(--navy);
   color: #ffffff;
-  padding: 44px var(--gutter);
+  padding: 32px var(--gutter);
 }
 
 .perks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 28px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px 40px;
 }
 
 .perk {
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
+  gap: 12px;
+  align-items: center;
 }
 
 .perk svg {
@@ -117,12 +88,6 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 1.4;
-}
-
-.perk-text {
-  margin-top: 4px;
-  font-size: 14px;
-  color: var(--on-dark-muted);
 }
 
 /* Section heading */
@@ -146,11 +111,6 @@
   gap: 14px;
 }
 
-.section-head-text {
-  max-width: 420px;
-  font-size: 17px;
-  color: var(--muted);
-}
 
 .fleet-grid {
   display: grid;
@@ -247,39 +207,9 @@
   border-radius: 24px;
 }
 
-.story-badge {
-  position: absolute;
-  left: -20px;
-  bottom: -28px;
-  padding: 20px 26px;
-  border-radius: 16px;
-  background: var(--navy);
-  color: #ffffff;
-  font-family: var(--font-display);
-  font-stretch: 110%;
-  font-weight: 800;
-  font-size: 22px;
-  text-transform: uppercase;
-}
 
-/* Gallery */
-.gallery {
-  padding: 0 var(--gutter) 120px;
-}
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: 20px;
-}
 
-.gallery-grid img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-card);
-}
 
 /* Book */
 .book {
@@ -315,21 +245,29 @@
 
 @media (max-width: 640px) {
   .section {
-    padding: 80px var(--gutter);
+    padding: 64px var(--gutter);
   }
 
   .hero-content {
-    padding-bottom: 48px;
+    padding-bottom: 40px;
+  }
+
+  .hero-secondary {
+    display: none;
+  }
+
+  .fleet {
+    gap: 32px;
+  }
+
+  .sandbar-copy {
+    padding: 56px var(--gutter);
   }
 
   .sandbar-photo {
-    min-height: 360px;
+    min-height: 280px;
   }
 
-  .story-badge {
-    left: 12px;
-    font-size: 18px;
-  }
 
   .book {
     padding: 112px var(--gutter);

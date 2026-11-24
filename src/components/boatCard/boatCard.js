@@ -15,8 +15,7 @@ const BoatCard = ({ boat }) => {
       </div>
       <div className="boat-card-body">
         <h3>{boat.name}</h3>
-        <p className="boat-card-capacity">Capacity: up to {boat.capacity} passengers</p>
-        <p className="boat-card-specs">{boat.specs}</p>
+        <p className="boat-card-capacity">Up to {boat.capacity} passengers</p>
         <span className="boat-card-cta">
           Book this boat <RxArrowRight aria-hidden="true" />
         </span>

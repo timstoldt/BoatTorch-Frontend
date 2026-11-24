@@ -10,8 +10,7 @@ import boats from "../data/boats";
 
 const perks = [
   {
-    title: "No hidden fees or taxes",
-    text: "The price you see is the price you pay.",
+    title: "No hidden fees",
     icon: (
       <>
         <circle cx="12" cy="12" r="9" />
@@ -21,23 +20,10 @@ const perks = [
   },
   {
     title: "Safety boat on standby",
-    text: "Help is a short ride away, all day.",
     icon: <path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z" />,
   },
   {
-    title: "Family owned and operated",
-    text: "Run by locals who love this lake.",
-    icon: (
-      <>
-        <path d="M3 11l9-7 9 7" />
-        <path d="M5 10v10h14V10" />
-        <path d="M10 20v-5h4v5" />
-      </>
-    ),
-  },
-  {
-    title: "7th day free",
-    text: "Book a week, get a day on us.",
+    title: "7th day free on weekly rentals",
     icon: (
       <>
         <rect x="3" y="5" width="18" height="16" rx="2" />
@@ -46,8 +32,7 @@ const perks = [
     ),
   },
   {
-    title: "Delivery available",
-    text: "On multi-day rentals.",
+    title: "Delivery on multi-day rentals",
     icon: (
       <>
         <path d="M2 6h11v10H2z" />
@@ -74,25 +59,18 @@ function Home() {
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content">
           <div className="hero-copy">
-            <p className="eyebrow eyebrow--gold hero-eyebrow">Torch Lake · Northern Michigan</p>
             <h1 className="display display--xl">
               Torch Lake,
               <br />
               your way.
             </h1>
-            <p className="hero-sub">Premium tritoon rentals on beautiful Torch Lake.</p>
+            <p className="hero-sub">Premium tritoon rentals on beautiful Torch Lake, from $300 a day.</p>
             <div className="hero-actions">
               <BookButton size="lg">Book your day</BookButton>
-              <Link className="pill pill--outline pill--lg" to="/#fleet">
+              <Link className="pill pill--outline pill--lg hero-secondary" to="/#fleet">
                 See the fleet
               </Link>
             </div>
-          </div>
-          <div className="hero-price">
-            <span className="hero-price-label">Starting at</span>
-            <span className="hero-price-value">
-              $300<span> / day</span>
-            </span>
           </div>
         </div>
       </section>
@@ -105,10 +83,7 @@ function Home() {
               <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 {perk.icon}
               </svg>
-              <div>
-                <p className="perk-title">{perk.title}</p>
-                <p className="perk-text">{perk.text}</p>
-              </div>
+              <p className="perk-title">{perk.title}</p>
             </div>
           ))}
         </div>
@@ -122,9 +97,6 @@ function Home() {
               <p className="eyebrow">The fleet</p>
               <h2 className="display display--lg">Pick your boat.</h2>
             </div>
-            <p className="section-head-text">
-              Three Avalon and Tahoe tritoons, kept clean and ready for groups of 12 to 17.
-            </p>
           </div>
           <div className="fleet-grid">
             {boats.map((boat) => (
@@ -170,10 +142,8 @@ function Home() {
               there's nowhere we'd rather be.
             </p>
             <p>
-              That's why we care so much about keeping it beautiful. We look after our boats,
-              share what we know about enjoying the lake the right way, and ask every guest to
-              leave the water as clear and clean as they found it. Our hope is simple: that you
-              fall for this place the way we did, and help us protect it for the next generation.
+              That's why we care so much about keeping it beautiful, and why we ask every guest
+              to help us protect it for the next generation.
             </p>
             <div className="story-sign">
               <span aria-hidden="true" />
@@ -182,17 +152,7 @@ function Home() {
           </div>
           <div className="story-photo">
             <Photo name="shore" alt="Two tritoons resting in clear green water near the Torch Lake shore" />
-            <div className="story-badge">Family owned</div>
           </div>
-        </div>
-      </section>
-
-      {/* GALLERY */}
-      <section className="gallery" aria-label="On the water">
-        <div className="container-wide gallery-grid">
-          <Photo name="sandbar-1200" alt="Tritoons anchored together in shallow turquoise water" />
-          <Photo name="hero-1200" alt="Three boats from above on turquoise water" />
-          <Photo name="sunset-1200" alt="Fiery orange sunset over Torch Lake" />
         </div>
       </section>
 
@@ -203,9 +163,7 @@ function Home() {
         <div className="book-content">
           <h2 className="display display--xl">Make lasting memories with us.</h2>
           <p>
-            Days start at $300. Book a week and the 7th day is free.
-            <br />
-            Delivery is available on multi-day rentals.
+            Days start at $300. Delivery is available on multi-day rentals.
           </p>
           <BookButton size="lg">Book your adventure</BookButton>
         </div>
