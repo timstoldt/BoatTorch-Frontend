@@ -1,7 +1,6 @@
 // Home.js
 
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Home.css";
 import Photo from "../components/photo/photo";
 import BookButton from "../components/bookButton/bookButton";
@@ -59,14 +58,9 @@ function Home() {
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content">
           <div className="hero-copy">
+            <p className="hero-eyebrow">Rapid City, Michigan</p>
             <h1 className="hero-title">Torch Lake, your way.</h1>
-            <p className="hero-sub">Premium tritoon rentals on beautiful Torch Lake, from $300 a day.</p>
-            <div className="hero-actions">
-              <BookButton size="lg">Book your day</BookButton>
-              <Link className="pill pill--outline pill--lg hero-secondary" to="/#fleet">
-                See the fleet
-              </Link>
-            </div>
+            <BookButton size="lg">Book your day</BookButton>
           </div>
         </div>
       </section>
