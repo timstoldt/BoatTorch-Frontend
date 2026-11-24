@@ -1,6 +1,8 @@
 // Home.js
 
 import React from "react";
+import { Link } from "react-router-dom";
+import { RxChevronDown } from "react-icons/rx";
 import "./Home.css";
 import Photo from "../components/photo/photo";
 import BookButton from "../components/bookButton/bookButton";
@@ -75,13 +77,16 @@ function Home() {
           <div className="hero-copy">
             <p className="hero-eyebrow">Rapid City, Michigan</p>
             <h1 className="hero-title">Torch Lake, your way.</h1>
-            <BookButton size="lg">Book your day</BookButton>
+            <BookButton size="lg">Book your boat</BookButton>
           </div>
         </div>
+        <Link className="hero-scroll" to="/#perks" aria-label="Scroll down">
+          <RxChevronDown aria-hidden="true" />
+        </Link>
       </section>
 
       {/* PERKS */}
-      <section className="perks" aria-label="Why BoatTorch">
+      <section className="perks" id="perks" aria-label="Why BoatTorch">
         <div className="container-wide perks-grid">
           {perks.map((perk) => (
             <div className="perk" key={perk.title}>
