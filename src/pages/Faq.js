@@ -39,7 +39,7 @@ const Faq = () => {
     },
     {
       title: "What are the boat specifications?",
-      body: "26ft Tahoe: up to 15 passengers, 175hp Yamaha VMAX, 35-gallon tank. 27ft Avalon: up to 17 passengers, 150hp Mercury, 58-gallon tank. 23ft Avalon: up to 12 passengers, 140hp Suzuki, 38-gallon tank. All have a bimini top.",
+      body: "We have a small fleet of boats available. To read more about them, please visit the Fleet section.",
       buttonTitle: "Our Fleet",
       buttonUrl: "/#fleet",
     },
